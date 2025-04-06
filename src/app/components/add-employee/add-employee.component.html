@@ -1,0 +1,58 @@
+<div class="form-container">
+    <h2>Add New Employee</h2>
+  
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label>First Name</label>
+        <input type="text" formControlName="first_name" />
+      </div>
+  
+      <div class="form-field">
+        <label>Last Name</label>
+        <input type="text" formControlName="last_name" />
+      </div>
+  
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" formControlName="email" />
+      </div>
+  
+      <div class="form-field">
+        <label>Gender</label>
+        <select formControlName="gender">
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+  
+      <div class="form-field">
+        <label>Designation</label>
+        <input type="text" formControlName="designation" />
+      </div>
+  
+      <div class="form-field">
+        <label>Salary</label>
+        <input type="number" formControlName="salary" />
+      </div>
+  
+      <div class="form-field">
+        <label>Date of Joining</label>
+        <input type="date" formControlName="date_of_joining" />
+      </div>
+  
+      <div class="form-field">
+        <label>Department</label>
+        <input type="text" formControlName="department" />
+      </div>
+  
+      <button type="submit" [disabled]="employeeForm.invalid">Add Employee</button>
+    </form>
+  
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  
+    <p><a routerLink="/employees">Back to Employee List</a></p>
+  </div>
+  

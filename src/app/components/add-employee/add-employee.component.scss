@@ -1,0 +1,57 @@
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    transition: box-shadow 0.3s ease;
+  
+    &:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Add hover effect */
+    }
+  }
+  
+  .form-field {
+    margin-bottom: 20px;
+    
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+  
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        border-color: #1976d2; /* Change border color on focus */
+        background-color: #fff;
+        outline: none;
+      }
+    }
+  }
+  
+  .success {
+    color: #4caf50;  /* Green color for success */
+    font-weight: 600;
+    margin-top: 12px;
+    text-align: center;
+  }
+  
+  .error {
+    color: #e53935;  /* Red color for error */
+    font-weight: 600;
+    margin-top: 12px;
+    text-align: center;
+  }
+  

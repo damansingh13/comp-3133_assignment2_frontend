@@ -1,0 +1,148 @@
+/* Employee Table */
+.employee-table {
+    width: 90%; /* Adjusted width to 90% to create more space around the table */
+    margin: 30px auto; /* Centers the table */
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures rounded corners are visible */
+    
+    th, td {
+      padding: 18px 25px; /* Increased padding for better spacing */
+      text-align: left;
+      font-size: 17px; /* Slightly larger font for readability */
+      color: #4e4e4e; /* Dark gray text */
+      border-bottom: 2px solid #ddd; /* Subtle border between rows */
+      
+    }
+    td:hover {
+        font-weight: bold; /* Bold text on hover */
+        font-style: italic; /* Italic text on hover */
+        color: #2980b9; /* Optional: Change text color on hover */
+      }
+    th {
+      background-color: #8e44ad; /* Rich purple for the header */
+      color: white;
+      font-weight: bold;
+      font-size: 18px; /* Increased font size for header */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    td {
+      background-color: #f9f9f9; /* Soft light gray for data cells */
+      color: #555; /* Dark gray text */
+      border-right: 1px solid #ddd; /* Vertical border for cell separation */
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f2f2f2; /* Slightly lighter gray for even rows */
+    }
+  
+    tr:hover {
+      background-color: #e0e0e0; /* Subtle hover color */
+      transform: scale(1.02); /* Slight zoom effect */
+      transition: background-color 0.3s, transform 0.3s;
+    }
+  
+    button {
+        padding: 2px 2px; /* Increased size for better usability */
+        background-color: #16a085; /* Fresh teal for buttons */
+        color: white;
+        border: none;
+        border-radius: 8px; /* Slightly more rounded corners for a modern look */
+        font-size: 16px; /* Adjusted for better readability */
+        font-weight: 600; /* Added weight for emphasis */
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        margin-right: 15px; /* Added spacing between buttons */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+        text-align: center; /* Center text alignment */
+        display: inline-block; /* Makes button behave more like a block element */
+      &:hover {
+        background-color: #1abc9c; /* Slightly darker teal on hover */
+        transform: translateY(-2px); /* Slight hover effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+      }
+  
+      &:disabled {
+        background-color: #bdc3c7;
+        cursor: not-allowed;
+        box-shadow: none; /* Remove shadow for disabled buttons */
+      }
+    }
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    
+    input {
+      flex: 1;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fff;
+    
+      &:focus {
+        border-color: #16a085; /* Teal focus border */
+        box-shadow: 0 0 8px rgba(22, 160, 133, 0.2); /* Teal shadow on focus */
+      }
+    
+      &::placeholder {
+        color: #7f8c8d;
+      }
+    }
+    
+    button {
+      padding: 10px 20px; /* More compact button */
+      background-color: #16a085; /* Teal for buttons */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+      &:hover {
+        background-color: #1abc9c;
+        transform: translateY(-2px); /* Hover effect with slight lift */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      }
+    
+      &:disabled {
+        background-color: #bdc3c7;
+        cursor: not-allowed;
+        box-shadow: none; /* Remove shadow for disabled buttons */
+      }
+    }
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .employee-table {
+      width: 100%; /* Make table full width on smaller screens */
+      font-size: 14px;
+      th, td {
+        padding: 12px; /* Less padding on smaller screens */
+      }
+    }
+  
+    .search-bar {
+      flex-direction: column;
+      gap: 15px;
+      
+      input, button {
+        width: 100%; /* Full-width for search bar elements */
+      }
+    }
+  }

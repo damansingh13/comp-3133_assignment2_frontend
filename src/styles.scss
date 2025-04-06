@@ -1,0 +1,183 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color:  linear-gradient(135deg, #8c107d, #f4e1c1);
+  color: #333;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: #333;
+}
+
+p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+small {
+  font-size: 0.8rem;
+  color: #d32f2f;
+  font-style: italic;
+}
+
+/* Links */
+a:hover,
+button:hover {
+  text-decoration: underline;
+}
+
+/* Forms */
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-field input:focus {
+  background-color: #f0f8ff;
+  border-color: #1976d2;
+  outline: none;
+}
+
+.form-field small {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* Container Styles */
+.auth-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+}
+
+.auth-container h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* Moving Welcome Message */
+@keyframes moveWelcome {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.welcome-message {
+  font-size: 1.5rem;
+  color: #1976d2;
+  white-space: nowrap;
+  animation: moveWelcome 10s linear infinite;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+  .auth-container {
+    padding: 2rem;
+  }
+
+  .form-field input {
+    padding: 0.75rem;
+  }
+
+  button {
+    padding: 1rem;
+  }
+}

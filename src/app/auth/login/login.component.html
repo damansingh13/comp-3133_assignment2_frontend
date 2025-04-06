@@ -1,0 +1,32 @@
+<div class="auth-container">
+  <div class="welcome-message">
+    <p>Welcome! Please log in to continue.</p>
+  </div>
+
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" />
+      <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Email is required
+      </small>
+    </div>
+
+    <div class="form-field">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" />
+      <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+
+  <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
+</div>

@@ -1,0 +1,50 @@
+<h2>Employee List</h2>
+
+<div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search by Designation"
+      [(ngModel)]="searchCriteria.designation"
+      name="designation"
+    />
+    <input
+      type="text"
+      placeholder="Search by Department"
+      [(ngModel)]="searchCriteria.department"
+      name="department"
+    />
+    <button (click)="searchEmployees()">Search</button>
+    <button (click)="resetSearch()">Reset</button>
+  </div>
+  
+
+<button routerLink="/employees/add">Add Employee</button>
+
+<table class="employee-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Designation</th>
+      <th>Department</th>
+      <th>Salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+      <td>{{ emp.email }}</td>
+      <td>{{ emp.designation }}</td>
+      <td>{{ emp.department }}</td>
+      <td>{{ emp.salary | currency }}</td>
+      <td>
+        <button [routerLink]="['/employees', emp.id]">View</button>
+        <button [routerLink]="['/employees', emp.id, 'edit']">Edit</button>
+        <button (click)="deleteEmployee(emp.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="logout()">Logout</button>
